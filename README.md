@@ -10,7 +10,7 @@ In the conditional functions I have chosen to return `"true"` or `"false"` since
 ### isResourceAvailable
 A function to check if a resource, for instance a file/directory is available at the designated path or not.
 
-```
+```sh
 function isResourceAvailable() {
   local path=$1;
   if [ $(compgen -G "$path") ]
@@ -23,7 +23,7 @@ function isResourceAvailable() {
 ### trimSpaces
 A function to trim the leading and trailing spaces of a value.
 
-```
+```sh
 function trimSpaces() {
   local trimmed="$1"
 
@@ -44,14 +44,14 @@ function trimSpaces() {
 ### trimQuotes
 A function to trim the leading and trailing quotes of a value.
 
-```
+```sh
 function trimQuotes() {
   local trimmed="$1"
 
-  # Strip leading spaces
+  # Strip leading quotes
   trimmed="${trimmed%\"}"
 
-  # Strip trailing spaces
+  # Strip trailing quotes
   trimmed="${trimmed#\"}"
 
   echo "$trimmed";
