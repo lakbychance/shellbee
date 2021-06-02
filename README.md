@@ -1,4 +1,4 @@
-# shellbee
+# shellbee 🐚🐝
 A collection of shell utility functions written by a noob in shell scripting. These are tested on Ubuntu 20.04. 
 
 ## Purpose
