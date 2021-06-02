@@ -12,6 +12,9 @@ In the conditional functions I have chosen to return `"true"` or `"false"` since
 ### configureAsAService
 A function to configure a service for non-root user.
 
+<details>
+  <summary>Click to expand</summary>
+  
 ```sh
 function configureAsAService() {
   local service=$1;
@@ -29,9 +32,13 @@ function configureAsAService() {
   systemctl --user enable $service
 }
 ```
+</details>
 
 ### getTextBetween
 A function to get text between two words in a phrase of a file.
+
+<details>
+  <summary>Click to expand</summary>
 
 ```sh
 function getTextBetween() {
@@ -42,9 +49,13 @@ function getTextBetween() {
   echo $(grep "$phrase" "$file" | awk -v FS="$start|$end" '{print $2}')
 }
 ```
+</details>
 
 ### isResourceAvailable
 A function to check if a resource, for instance a file/directory is available at the designated path or not.
+
+<details>
+  <summary>Click to expand</summary>
 
 ```sh
 function isResourceAvailable() {
@@ -55,9 +66,13 @@ function isResourceAvailable() {
   fi
 }
 ```
+</details>
 
 ### promptUser
 A function to take input from user.
+
+<details>
+  <summary>Click to expand</summary>
 
 ```sh
 function promptUser() {
@@ -77,9 +92,14 @@ function promptUser() {
    echo "$reply"
 }
 ```
+  
+</details>  
 
 ### startService
 A function to start a service as non-root user.
+
+<details>
+  <summary>Click to expand</summary>
 
 ```sh
 function startService() {
@@ -87,9 +107,13 @@ function startService() {
   systemctl --user start $service
 }
 ```
-
+</details>
+  
 ### stopService
 A function to stop a service as non-root user.
+
+<details>
+  <summary>Click to expand</summary>
 
 ```sh
 function stopService() {
@@ -97,9 +121,13 @@ function stopService() {
   systemctl --user stop $service
 }
 ```
+</details>
 
 ### trimQuotes
 A function to trim the leading and trailing quotes of a value.
+
+<details>
+  <summary>Click to expand</summary>
 
 ```sh
 function trimQuotes() {
@@ -114,9 +142,14 @@ function trimQuotes() {
   echo "$trimmed";
 }
 ```
+  
+</details>  
 
 ### trimSpaces
 A function to trim the leading and trailing spaces of a value.
+
+<details>
+  <summary>Click to expand</summary>
 
 ```sh
 function trimSpaces() {
@@ -135,4 +168,5 @@ function trimSpaces() {
   echo "$trimmed";
 }
 ```
+</details>
 
