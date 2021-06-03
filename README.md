@@ -8,7 +8,7 @@ These were written by me when automating a big ass setup. This was my first time
 
 ## Functions
 In the conditional functions I have chosen to return `"true"` or `"false"` since I like this pattern of comparing function outputs to booleans/boolean strings for further decisions. You can totally customize this as per your preferences.
-
+    
 ### configureAsAService
 A function to configure a service for non-root user.
 
@@ -50,6 +50,24 @@ function getTextBetween() {
 }
 ```
 </details>
+
+### isDebPackageInstalled
+A function to check if a deb package is installed or not.
+
+<details>
+  <summary>Click to expand</summary>
+
+```sh
+function isDebPackageInstalled() {
+  local software=$1
+  local checkString=$(dpkg -s $software 2>/dev/null | grep Status)
+  if [ "$checkString" == "Status: install ok installed" ]
+     then echo "true"
+     else echo "false"
+  fi
+}
+```
+</details> 
 
 ### isResourceAvailable
 A function to check if a resource, for instance a file/directory is available at the designated path or not.
