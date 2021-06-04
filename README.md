@@ -86,6 +86,23 @@ function isResourceAvailable() {
 ```
 </details>
 
+### isServiceActive
+A function to check if a service is active or not for non-root user.
+
+<details>
+  <summary>Click to expand</summary>
+
+```sh
+function isServiceActive() {
+    local service=$1
+    if [ "$(systemctl --user show -p ActiveState --value $service)" = "active" ]
+       then echo "true"
+       else echo "false"
+    fi
+}
+```
+</details>    
+    
 ### promptUser
 A function to take input from user.
 
