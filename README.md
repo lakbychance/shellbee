@@ -6,6 +6,27 @@ These were written by me when automating a big ass setup. This was my first time
 
 **Note** - The name of functions might feel verbose to people who know the underlying short native commands well. I personally like function names which can give subtle hints of what they are trying to achieve.
 
+## Contribution
+The format is as follows in the order :- 
+* Function name
+* Function description
+* Accordion consisting of the function implementation.
+
+The Accordion can be made using following format :- 
+````
+<details>
+  <summary>Click to expand</summary>
+ 
+```sh
+function someFunction() {
+# implementation
+}
+```
+
+</details>
+
+````
+
 ## Functions
 In the conditional functions I have chosen to return `"true"` or `"false"` since I like this pattern of comparing function outputs to booleans/boolean strings for further decisions. You can totally customize this as per your preferences.
     
