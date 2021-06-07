@@ -102,6 +102,33 @@ function isServiceActive() {
 }
 ```
 </details>    
+
+### promptLoop
+A function which keeps prompting the user with question until valid options are entered. 
+
+Depends on `promptUser` for implementation.
+
+<details>
+  <summary>Click to expand</summary>
+
+```sh
+function promptLoop() {
+    local promptString=$1
+    local option1=$2
+    local option2=$3
+    local isNotValid="true"
+    local promptOutput=""
+    while [ "$isNotValid" = "true" ]
+    do
+    promptOutput="$(promptUser "$promptString" 'r')"
+    if [[ "$promptOutput" = "$option1" || "$promptOutput" = "$option2" ]]
+       then isNotValid="false"
+    fi
+    done
+    echo "$promptOutput"
+}
+```
+</details>     
     
 ### promptUser
 A function to take input from user.
